@@ -18,22 +18,23 @@ def load_custom_css():
         .main-header {
             text-align: center;
             padding: 2rem 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
             color: white;
             border-radius: 12px;
             margin-bottom: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         .data-card {
-            background: white;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
             border-radius: 12px;
             padding: 1.5rem;
             margin: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(13, 71, 161, 0.1);
+            border: 1px solid rgba(3, 150, 255, 0.1);
+            color: #1a1a1a;
         }
         .stButton > button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
             color: white;
             border: none;
             border-radius: 12px;
@@ -173,7 +174,7 @@ with tab1:
             <h3 style="color: var(--text-primary); margin-bottom: 1rem;">📋 Data Preview</h3>
         </div>
         """, unsafe_allow_html=True)
-        st.dataframe(data_preview, width='stretch')
+        st.dataframe(data_preview, use_container_width=True)
 
         try:
             sch = requests.get(
@@ -227,7 +228,7 @@ with tab1:
                 summary = summary_resp.json().get("answer", "No summary returned.")
                 st.markdown(f"""
                 <div class="data-card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
-                    <div style="color: var(--text-primary); line-height: 1.6;">
+                    <div style="color: #1e3a8a; line-height: 1.6; font-weight: 500; font-size: 1rem;">
                         {summary}
                     </div>
                 </div>
@@ -328,8 +329,8 @@ with tab3:
                     answer = response.json().get("answer", "No response available.")
                     st.markdown(f"""
                     <div class="data-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);">
-                        <h4 style="color: var(--success-color); margin-bottom: 1rem;">🤖 AI Response</h4>
-                        <div style="color: var(--text-primary); line-height: 1.6;">
+                        <h4 style="color: #047857; margin-bottom: 1rem; font-weight: 600;">🤖 AI Response</h4>
+                        <div style="color: #1e3a8a; line-height: 1.6; font-weight: 500; font-size: 1rem;">
                             {answer}
                         </div>
                     </div>
@@ -450,24 +451,24 @@ with tab4:
 # Welcome message for new users
 if not uploaded_file or not user_id:
     st.markdown("""
-    <div class="data-card" style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);">
-        <h2 style="color: var(--primary-color); margin-bottom: 1rem;">🚀 Welcome to DataInsight Pro</h2>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
-            Get started by entering your user ID and uploading your data file
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
-            <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📊 Upload Data</h4>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">CSV, PDF, DOCX, Excel files</p>
-            </div>
-            <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🤖 AI Analysis</h4>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Automatic insights and patterns</p>
-            </div>
-            <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📈 Visualizations</h4>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Professional charts and graphs</p>
-            </div>
+<div class="data-card" style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(219, 39, 119, 0.15) 100%);">
+    <h2 style="color: #1e3a8a; margin-bottom: 1rem; font-weight: 600;">🚀 Welcome to DataInsight Pro</h2>
+    <p style="color: #1e40af; font-size: 1.1rem; margin-bottom: 2rem; font-weight: 500;">
+        Get started by entering your user ID and uploading your data file
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+            <h4 style="color: #2563eb; margin-bottom: 0.5rem; font-weight: 600;">📊 Upload Data</h4>
+            <p style="color: #1e40af; font-size: 0.9rem; margin: 0;">CSV, PDF, DOCX, Excel files</p>
+        </div>
+        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+            <h4 style="color: #2563eb; margin-bottom: 0.5rem; font-weight: 600;">🤖 AI Analysis</h4>
+            <p style="color: #1e40af; font-size: 0.9rem; margin: 0;">Automatic insights and patterns</p>
+        </div>
+        <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+            <h4 style="color: #2563eb; margin-bottom: 0.5rem; font-weight: 600;">📈 Visualizations</h4>
+            <p style="color: #1e40af; font-size: 0.9rem; margin: 0;">Professional charts and graphs</p>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+</div>
+""", unsafe_allow_html=True)
