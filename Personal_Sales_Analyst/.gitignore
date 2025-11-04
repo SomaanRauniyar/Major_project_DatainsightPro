@@ -1,0 +1,45 @@
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+./venv
+env/
+ENV/
+*.egg-info/
+
+# Distribution / packaging
+dist/
+build/
+*.egg
+*.lib
+*.whl
+
+# Log files and temp files
+*.log
+*.tmp
+tmp/
+
+# Secrets
+secrets/
+*.key
+*.pem
+.env
+gcp_key.json.bak
+
+# OS generated files
+.DS_Store
+*.swp
+
+# Streamlit
+.streamlit/
+
+# Data
+data/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
